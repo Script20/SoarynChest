@@ -1,37 +1,30 @@
 package com.soaryn.chest;
 
+import com.soaryn.chest.client.SoarynChestConfigScreen;
 import com.soaryn.chest.config.SoarynChestConfig;
 import com.soaryn.chest.init.ModBlockEntities;
 import com.soaryn.chest.init.ModBlocks;
 import com.soaryn.chest.init.ModCreativeTabs;
 import com.soaryn.chest.init.ModItems;
-import com.soaryn.chest.client.SoarynChestConfigScreen;
-import net.minecraftforge.client.ConfigScreenHandler;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(SoarynChest.MOD_ID)
 public class SoarynChest {
     public static final String MOD_ID = "soarynchest";
 
-    public SoarynChest() {
-        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    public SoarynChest(IEventBus modBus, ModContainer modContainer) {
         ModBlocks.BLOCKS.register(modBus);
         ModItems.ITEMS.register(modBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modBus);
         ModCreativeTabs.CREATIVE_TABS.register(modBus);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SoarynChestConfig.SPEC, "soarynchest-common.toml");
+        modContainer.registerConfig(ModConfig.Type.COMMON, SoarynChestConfig.SPEC, "soarynchest-common.toml");
 
-        ModLoadingContext.get().registerExtensionPoint(
-                ConfigScreenHandler.ConfigScreenFactory.class,
-                () -> new ConfigScreenHandler.ConfigScreenFactory((mc, parent) -> new SoarynChestConfigScreen(parent)));
-
-        MinecraftForge.EVENT_BUS.register(this);
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class,
+                (container, parent) -> new SoarynChestConfigScreen(parent));
     }
 }

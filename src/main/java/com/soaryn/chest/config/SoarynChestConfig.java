@@ -1,13 +1,13 @@
 package com.soaryn.chest.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class SoarynChestConfig {
-    public static final ForgeConfigSpec SPEC;
-    public static final ForgeConfigSpec.BooleanValue INCLUDE_HOTBAR;
+    public static final ModConfigSpec SPEC;
+    public static final ModConfigSpec.BooleanValue INCLUDE_HOTBAR;
 
     static {
-        ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
         builder.comment("Soaryn Chest Configuration");
         builder.push("general");

@@ -2,16 +2,13 @@ package com.soaryn.chest.init;
 
 import com.soaryn.chest.SoarynChest;
 import com.soaryn.chest.block.SoarynChestBlockItem;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, SoarynChest.MOD_ID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SoarynChest.MOD_ID);
 
-    public static final RegistryObject<BlockItem> SOARYN_CHEST = ITEMS.register("soaryn_chest",
+    public static final DeferredItem<SoarynChestBlockItem> SOARYN_CHEST = ITEMS.register("soaryn_chest",
             () -> new SoarynChestBlockItem(ModBlocks.SOARYN_CHEST.get(), new Item.Properties()));
 }
