@@ -14,5 +14,5 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, SoarynChest.MOD_ID);
 
     public static final RegistryObject<SoarynChestBlock> SOARYN_CHEST = BLOCKS.register("soaryn_chest",
-            () -> new SoarynChestBlock(BlockBehaviour.Properties.copy(Blocks.CHEST)));
+            () -> new SoarynChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST)));
 }
