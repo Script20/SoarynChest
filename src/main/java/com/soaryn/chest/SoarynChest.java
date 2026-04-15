@@ -24,7 +24,7 @@ public class SoarynChest {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, SoarynChestConfig.SPEC, "soarynchest-common.toml");
 
-        modContainer.registerExtensionPoint(IConfigScreenFactory.class,
-                (container, parent) -> new SoarynChestConfigScreen(parent));
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class, 
+            (container, parent) -> new SoarynChestConfigScreen(parent));
     }
 }
