@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:chest"
-    },
-    {
-      "item": "minecraft:hopper"
-    }
+    "minecraft:chest",
+    "minecraft:hopper"
   ],
   "result": {
     "id": "soarynchest:soaryn_chest",
