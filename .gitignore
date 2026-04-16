@@ -27,3 +27,5 @@ replay_pid*
 .gradle
 build
 run
+.eclipse
+.idea
