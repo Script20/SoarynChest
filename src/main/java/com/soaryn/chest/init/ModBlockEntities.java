@@ -13,5 +13,5 @@ public class ModBlockEntities {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SoarynChestBlockEntity>> SOARYN_CHEST =
             BLOCK_ENTITIES.register("soaryn_chest",
-                    () -> BlockEntityType.Builder.of(SoarynChestBlockEntity::new, ModBlocks.SOARYN_CHEST.get()).build(null));
+                    () -> new BlockEntityType<>(SoarynChestBlockEntity::new, ModBlocks.SOARYN_CHEST.get()));
 }

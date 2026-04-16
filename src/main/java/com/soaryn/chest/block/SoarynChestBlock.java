@@ -1,24 +1,34 @@
 package com.soaryn.chest.block;
 
+import com.mojang.serialization.MapCodec;
 import com.soaryn.chest.block.entity.SoarynChestBlockEntity;
 import com.soaryn.chest.config.SoarynChestConfig;
-import com.soaryn.chest.init.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 
+import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 public class SoarynChestBlock extends ChestBlock {
 
-    public SoarynChestBlock(Properties properties) {
-        super(properties, ModBlockEntities.SOARYN_CHEST::get);
+    public SoarynChestBlock(Supplier<BlockEntityType<? extends ChestBlockEntity>> blockEntityType,
+                            SoundEvent openSound, SoundEvent closeSound, Properties properties) {
+        super(blockEntityType, openSound, closeSound, properties);
+    }
+
+    @Override
+    public MapCodec<? extends ChestBlock> codec() {
+        return ChestBlock.CODEC;
     }
 
     @Override

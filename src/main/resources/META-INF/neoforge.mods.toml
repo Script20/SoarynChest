@@ -15,13 +15,13 @@ Configure whether to include your hotbar too.
 [[dependencies.soarynchest]]
 modId="neoforge"
 type="required"
-versionRange="[21.1,)"
+versionRange="[26.1,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.soarynchest]]
 modId="minecraft"
 type="required"
-versionRange="[1.21.1,1.22)"
+versionRange="[26.1.2,26.2)"
 ordering="NONE"
 side="BOTH"
