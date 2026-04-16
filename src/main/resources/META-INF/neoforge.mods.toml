@@ -1,27 +1,54 @@
 modLoader="javafml"
+
 loaderVersion="[4,)"
+
 license="MIT"
 
+
+
 [[mods]]
+
 modId="soarynchest"
+
 version="${file.jarVersion}"
+
 displayName="Soaryn Chest"
+
 authors="Soaryn"
+
 description='''
+
 A chest that absorbs your inventory when placed.
+
 Configure whether to include your hotbar too.
+
 '''
 
-[[dependencies.soarynchest]]
-modId="neoforge"
-type="required"
-versionRange="[26.1,)"
-ordering="NONE"
-side="BOTH"
+
 
 [[dependencies.soarynchest]]
-modId="minecraft"
+
+modId="neoforge"
+
 type="required"
-versionRange="[26.1.2,26.2)"
+
+versionRange="[26.1,)"
+
 ordering="NONE"
+
 side="BOTH"
+
+
+
+[[dependencies.soarynchest]]
+
+modId="minecraft"
+
+type="required"
+
+versionRange="[26.1,26.2)"
+
+ordering="NONE"
+
+side="BOTH"
+
