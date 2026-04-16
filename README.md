@@ -15,7 +15,7 @@ Built for **Minecraft 26.1** using **NeoForge 26.1.2**.
 
 Shapeless recipe:
 
-🗃️ Chest + ⏬ Hopper = **Soaryn Chest**
+Chest + Hopper = **Soaryn Chest**
 
 ## Configuration
 
